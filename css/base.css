@@ -1,0 +1,16 @@
+/* 
+    Created on : Nov 02, 2015, 10:15:00 PM
+    Author     : Emilie Dzwonar
+*/
+
+/*------------------------   Form  ----------------------------- */
+
+form legend {
+    
+    font-family: Century-Gothic;
+}
+
+.mistake {
+    
+    background-color: lightcoral;
+}
