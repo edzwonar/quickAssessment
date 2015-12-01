@@ -14,7 +14,7 @@ require_once('lib/custom-functions.php');
     <script src="//html5shim.googlecode.com/sin/trunk/html5.js"></script>
     <![endif]-->
     
-    <link rel="stylesheet" href="base.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/base.css" type="text/css" media="screen">
     
     <?php
         $debug = false;
@@ -116,13 +116,28 @@ require_once('lib/custom-functions.php');
         
         $dbUserName = 'jrfiore_admin';
         $whichPass = "a";
-        $thisDatabaseAdmin = new Database($dbUserName, $whichPass, $dbName);
-        ?>	
+        $thisDatabaseAdmin = new Database($dbUserName, $whichPass, $dbName);	
+    
+        $username = htmlentities($_SERVER["REMOTE_USER"], ENT_QUOTES, "UTF-8");
 
+        $query = "SELECT fldTeacherFirstName, fldTeacherLastName FROM tblTeacher WHERE pmkUsername = ?";
+        $data = array($username);
+        $clients = $thisDatabaseReader->select($query,$data,1,0,0,0,false,false);
+   
+
+        if(empty($clients)) {
+
+            $new = true;
+
+        }else{
+            $new = false;
+        }
+?>
     </head>
 
     <!-- **********************     Body section      ********************** -->
     <?php
     print '<body id="' . $path_parts['filename'] . '">';
+   include "nav.php";
     
     ?>

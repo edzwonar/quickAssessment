@@ -6,19 +6,9 @@
 // 
 //##############################################################################
 include "top.php";
-$username = htmlentities($_SERVER["REMOTE_USER"], ENT_QUOTES, "UTF-8");
+?>
+<a href="newTeacher.php">Sign up!</a>
 
-$query = "SELECT fldTeacherFirstName, fldTeacherLastName FROM tblTeacher WHERE pmkUsername = ?";
-$data = array($username);
-$clients = $thisDatabaseReader->select($query,$data,1,0,0,0,false,false);
-
-if(empty($clients)) {
-  
-    include "newTeacher.php";
-
-}else{
-    print"Clients is full";
-}
-
+<?php
 include "footer.php"; ?>
 

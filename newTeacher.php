@@ -5,6 +5,7 @@
 //
 // SECTION: 1a.
 // variables for the classroom purposes to help find errors.
+include "top.php";
 $debug = false;
 
 if (isset($_GET["debug"])) { // ONLY do this in a classroom environment
@@ -233,6 +234,7 @@ if (isset($_POST["btnSubmit"])) {
 // If its the first time coming to the form or there are errors we are going
 // to display the form.
 if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked with: end body submit
+   /* 
     print "<h2>Your Request has ";
 
     if (!$mailed) {
@@ -250,6 +252,8 @@ if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked w
     print "<h3>Mail Message:</h3>";
 
     print $message;
+  */
+    
 } else {
 
 
@@ -261,11 +265,11 @@ if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked w
 
     if ($errorMsg) {
         print '<div id="errors">';
-        print "<ol>\n";
+        print "<ul>\n";
         foreach ($errorMsg as $err) {
             print "<li>" . $err . "</li>\n";
         }
-        print "</ol>\n";
+        print "</ul>\n";
         print '</div>';
     }
 
@@ -298,65 +302,70 @@ if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked w
               id="frmRegister">
 
             <fieldset class="wrapper">
-                <legend><span id="welcome">Welcome to My Quick Assessment Grader.</span></legend>
-                <p>Please fill out the following form to create your account.</p>
-
-                <fieldset class="wrapperTwo">
+                <legend><span id="welcome">Welcome to My Quick Assessment Grader</span></legend>
+                 <?php if ($errorMsg) {
+                        print '<p class = "mistake">*There appears to be missing information from required field(s).</p>';
+                        
+                }
+                else {
+                    print "<p id='signup'>It doesn't look like you have an account yet.  Please register below.</p>";
+                }?>
+                
+                
+              <!--  <fieldset class="wrapperTwo">-->
 
                     <fieldset class="contact">
-                        <legend>Contact Information</legend>
-                        <label for="txtFirstName" class="required">First Name</label>
+                        <!--<legend></legend>-->
+                        <label for="txtFirstName" class="required"><span <?php if ($firstNameERROR) print 'class="mistake"'; ?>>*</span></label>
                         <input type="text" id="txtFirstName" name="txtFirstName"
                                value="<?php print $firstName; ?>"
-                               tabindex="100" maxlength="45" placeholder="Enter your first name"
+                               tabindex="100" maxlength="45" placeholder="First Name"
     <?php if ($firstNameERROR) print 'class="mistake"'; ?>
                                onfocus="this.select()"
                                autofocus>
-                        <br/>
+                        
 
-                        <label for="txtLastName" class="required">Last Name</label>
+                        <label for="txtLastName" class="required"><span <?php if ($lastNameERROR) print 'class="mistake"'; ?>>*</span></label>
                         <input type="text" id="txtLastName" name="txtLastName"
                                value="<?php print $lastName; ?>"
-                               tabindex="110" maxlength="45" placeholder="Enter your last name"
+                               tabindex="110" maxlength="45" placeholder="Last Name"
     <?php if ($lastNameERROR) print 'class="mistake"'; ?>
                                onfocus="this.select()"
                                autofocus>
                         <br/>
 
-                        <label for="txtEmail" class="required">Email</label>
+                        <label for="txtEmail" class="required" id="labelEmail"><span <?php if ($emailERROR) print 'class="mistake"'; ?>>*</span></label>
                         <input type="text" id="txtEmail" name="txtEmail"
                                value="<?php print $email; ?>"
-                               tabindex="120" maxlength="45" placeholder="Enter a valid email address"
+                               tabindex="120" maxlength="45" placeholder="Email"
     <?php if ($emailERROR) print 'class="mistake"'; ?>
                                onfocus="this.select()" 
                                >
                         <br>
-                        <label for="txtDistrict" class="required">District</label>
+                        <label for="txtDistrict" class="required" id="labelDistrict"><span <?php if ($districtERROR) print 'class="mistake"'; ?>>*</span></label>
                         <input type="text" id="txtDistrict" name="txtDistrict"
                                value="<?php print $district; ?>"
-                               tabindex="120" maxlength="45" placeholder="Enter a valid district"
+                               tabindex="120" maxlength="45" placeholder="District"
     <?php if ($districtERROR) print 'class="mistake"'; ?>
                                onfocus="this.select()" 
                                >
                         <br>
-                        <label for="txtSchool" class="required">School</label>
+                        <label for="txtSchool" class="required" id="labelSchool"><span <?php if ($schoolERROR) print 'class="mistake"'; ?>>*</span></label>
                         <input type="text" id="txtSchool" name="txtSchool"
                                value="<?php print $district; ?>"
-                               tabindex="120" maxlength="45" placeholder="Enter a valid school"
+                               tabindex="120" maxlength="45" placeholder="School"
     <?php if ($schoolERROR) print 'class="mistake"'; ?>
                                onfocus="this.select()" 
                                >
 
                     </fieldset> <!-- ends contact -->
-
+                    
+                     <!--<legend></legend>-->
+                    <input type="submit" class = "submitButton" id="btnSubmit" name="btnSubmit" value="Register" tabindex="" onclick='this.form.action="index.php";'>
+                    
                 </fieldset> 
 
-                <fieldset class="buttons">
-                    <legend></legend>
-                    <input type="submit" class = "submitButton" id="btnSubmit" name="btnSubmit" value="Register" tabindex="900">
-                </fieldset> 
-
-            </fieldset> 
+            <!--</fieldset>-->
         </form>
     <?php
 } // end body submit

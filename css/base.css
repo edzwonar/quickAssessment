@@ -3,14 +3,243 @@
     Author     : Emilie Dzwonar
 */
 
-/*------------------------   Form  ----------------------------- */
-
-form legend {
-    
-    font-family: Century-Gothic;
+/*------------------------ Navigation ----------------------------*/
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.mistake {
+nav li {
+    display: inline;
+}
+
+/*------------------------   Form  ----------------------------- */
+body {
+    background-color: #000;
+    position: relative;
+    top: 15px;
+    margin: auto;
+    width: 80%;
+}
+
+#welcome {
+    color: #007a7a;
+    font-size:18px;
+}
+
+#signup {
+    text-align: center;
+    color: #423d3d
+}
+
+.wrapper {
+   padding: 50px; 
+   border-color: #bba1a4;
+}
+
+.wrapperTwo {
     
-    background-color: lightcoral;
+    padding: 30px;
+}
+
+form {
+    
+    font-family: "Century Gothic";
+    border-radius: 10px;
+}
+
+form fieldset {
+    border-radius: 10px;
+    border: 3px solid #e5eeee;
+   // box-shadow: 1px 1px #ced6d6;
+}
+
+form input {
+       //float: right;
+      // border-color: #669c9c;
+      border-style: solid;
+      border: 1px solid #cedbdb;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 3px;
+      font-size: 14px;
+      
+}
+
+#selectGrade {
+    height: 40px;
+    width: 100px;
+      border-style: solid;
+      border: 1px solid #cedbdb;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 3px;
+      font-size: 14px;
+}
+
+
+::-webkit-input-placeholder {
+   color: #6f6666;
+   font-family: "Century Gothic";
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #6f6666; 
+   font-family: "Century Gothic";
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #6f6666; 
+   font-family: "Century Gothic";
+}
+
+:-ms-input-placeholder {  
+   color: #6f6666; 
+   font-family: "Century Gothic";
+}
+
+
+form label {
+    padding-right: 10px;
+    font-size: 18px;
+    color: #7a8585;
+}
+
+
+
+.contact {
+    background-color: #fbf9f9;
+    opacity: .8;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 100px;
+   // padding-right: 20px;
+    width: 410px;
+    height: 300px;
+    margin: auto;
+}
+
+#txtFirstName,#txtLastName {
+    width: 98px;
+    margin-right: 26px;
+   
+}
+
+#selectGrade{
+    //float: right;
+    width: 90px;
+    
+}
+
+#addStudents #txtFirstName, #addStudents #txtLastName {
+    width: 100px;
+}
+
+#txtEmail, #txtDistrict, #txtSchool {
+    width: 270px;
+    //float: right;
+}
+
+.buttons {
+    border: none;
+}
+
+#selectGrade {
+    color: #6f6666; 
+    font-family: "Century Gothic";
+}
+
+#btnSubmit {
+    background-color: #e5f4f4;
+    color: #423d3d;
+    position: relative;
+    float: right;
+    right: 191px;
+    width: 520px;
+    font-size: 16px;
+    font-family: "Century Gothic";
+    border-radius: 5px;
+    border-color: #bba1a4;
+}
+
+
+#btnSubmit:hover {
+    background-color: #cedbdb;
+    opacity: .5;
+    color: #423d3d;
+    position: relative;
+    float: right;
+    right: 191px;
+    width: 520px;
+    font-size: 16px;
+    font-family: "Century Gothic";
+    border-radius: 5px;
+}
+
+#btnAdd {
+    background-color: #e5f4f4;
+    color: #423d3d;
+    position: relative;
+    width: 80px;
+    font-size: 16px;
+    font-family: "Century Gothic";
+    border-radius: 5px;
+    border-color: #bba1a4;
+}
+
+#btnAdd:hover {
+    background-color: #e5f4f4;
+    opacity: .5;
+    color: #423d3d;
+    position: relative;
+    width: 80px;
+    font-size: 16px;
+    font-family: "Century Gothic";
+    border-radius: 5px;
+    border-color: #bba1a4;
+}
+
+span.mistake, p.mistake {
+    color: #007a7a;
+    
+}
+
+select.mistake {
+    border-color: #007a7a;
+    background-color: #d6e4e4;
+}
+
+p.mistake {
+    font-size: 15px;
+    font-family: "Century Gothic";
+    text-align: center;
+}
+
+input.mistake {
+     border-color: #007a7a;
+     background-color: #d6e4e4;
+     border-radius: 5px;
+}
+
+.highlight {
+    color: #007a7a;
+    background-color: #cebcbe;
+}
+
+/*------------------------ Table -----------------------------------*/
+table {
+    overflow: scroll;
+    width: 300px;
+    height: 500px;
+}
+
+/*------------------------   Footer ----------------------------- */
+footer {
+    text-align: center;
+    clear: both;
+    
+    font-family: "Georgia";
 }
