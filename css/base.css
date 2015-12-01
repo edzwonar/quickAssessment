@@ -4,19 +4,19 @@
 */
 
 /*------------------------ Navigation ----------------------------*/
-nav ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-nav li {
+li {
     display: inline;
 }
 
 /*------------------------   Form  ----------------------------- */
 body {
-    background-color: #000;
+    background-color: #f4fafa;
     position: relative;
     top: 15px;
     margin: auto;
